@@ -88,7 +88,7 @@ class TestTechDocsCoreConfig(unittest.TestCase):
     def test_template_renders__multiline_value_as_valid_json(self):
         self.techdocscore.on_config(self.mkdocs_yaml_config)
         env = Environment(
-            loader=PackageLoader("test", self.techdocscore.tmp_dir_techdocs_theme.name),
+            loader=PackageLoader("src", self.techdocscore.tmp_dir_techdocs_theme.name),
             autoescape=select_autoescape(),
         )
         template = env.get_template("techdocs_metadata.json")
